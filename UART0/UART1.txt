@@ -1,0 +1,7 @@
+ESP8266 do support UART1, but please notice that UART1 only has TX, UART0 has both TX and RX. 
+So it is suggested to use UART1 to print logs, use UART0 to do communication work.
+
+您可以在 user_init 中调用 system_uart_swap，硬件上也连接 MTCK, MTDO 作为 UART0。
+
+用以避开原始 UART0 上电启动时的 ROM log。
+
